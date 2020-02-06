@@ -29,10 +29,13 @@
   when: logstash_monitor_local_syslog
   notify: restart logstash
 
+- name: Ensures patterns dir exists
+  file: path=/etc/logstash/conf.d/patterns state=directory
+
 - name: Create Logstash custom pattern.
   template:
     src: "{{ item.src }}"
-    dest: "/etc/logstash/conf.d/{{ item.dst }}"
+    dest: "/etc/logstash/conf.d/patterns{{ item.dst }}"
     owner: root
     group: root
     mode: 0644
