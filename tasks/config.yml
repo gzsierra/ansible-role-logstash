@@ -11,7 +11,7 @@
 
 - name: Create Logstash filters.
   copy:
-    src: "filters/{{ item }}"
+    src: "{{ item }}"
     dest: "/etc/logstash/conf.d/{{ item }}"
     owner: root
     group: root
