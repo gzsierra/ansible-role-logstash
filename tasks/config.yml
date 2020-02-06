@@ -29,6 +29,17 @@
   when: logstash_monitor_local_syslog
   notify: restart logstash
 
+- name: Create Logstash custom pattern.
+  template:
+    src: "{{ item.src }}"
+    dest: "/etc/logstash/conf.d/{{ item.dst }}"
+    owner: root
+    group: root
+    mode: 0644
+  when: logstash_filter_pattern is defined
+  with_items: "{{ logstash_filter_pattern }}"
+  notify: restart logstash
+
 - name: Ensure configuration for local syslog is absent if disabled.
   file:
     path: /etc/logstash/conf.d/02-local-syslog-input.conf

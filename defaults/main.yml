@@ -28,8 +28,8 @@ logstash_config:
   - 30-elasticsearch-output.conf
 
 logstash_filters:
-  - { src: filters/10-syslog.conf, dst: 10-syslog.conf }
-  - { src: filters/11-nginx.conf, dst: 11-nginx.conf }
-  - { src: filters/12-apache.conf, dst: 12-apache.conf }
-  - { src: filters/14-solr.conf, dst: 14-solr.conf }
-  - { src: filters/15-drupal.conf, dst: 15-drupal.conf }
+  - {src: filters/10-syslog.conf, dst: 10-syslog.conf}
+  - {src: filters/11-nginx.conf, dst: 11-nginx.conf}
+  - {src: filters/12-apache.conf, dst: 12-apache.conf}
+  - {src: filters/14-solr.conf, dst: 14-solr.conf}
+  - {src: filters/15-drupal.conf, dst: 15-drupal.conf}
