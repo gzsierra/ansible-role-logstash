@@ -1,8 +1,8 @@
 ---
 - name: Create Logstash configuration files.
   template:
-    src: "{{ item }}.j2"
-    dest: "/etc/logstash/conf.d/{{ item }}"
+    src: "{{ item.src }}.j2"
+    dest: "/etc/logstash/conf.d/{{ item.dst }}"
     owner: root
     group: root
     mode: 0644

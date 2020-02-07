@@ -24,8 +24,8 @@ logstash_install_plugins:
   - logstash-filter-multiline
 
 logstash_config:
-  - 01-beats-input.conf
-  - 30-elasticsearch-output.conf
+  - {src: 30-elasticsearch-output.conf, dst: 30-elasticsearch-output.conf}
+  - {src: 01-beats-input.conf, dst: 01-beats-input.conf}
 
 logstash_filters:
   - {src: filters/10-syslog.conf, dst: 10-syslog.conf}
